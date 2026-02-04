@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://yourusername.github.io/your-repo/sitemap.xml
+
+# Block access to admin panel and internal assets
+Disallow: /admin/
+Disallow: /private/

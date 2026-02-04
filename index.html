@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#080810" />
+    
+    <!-- SEO Metadata -->
+    <title>Shabab Ahmed Tazin | Tech Explorer</title>
+    <meta name="description" content="Shabab Ahmed Tazin's portfolio—BBA student messing around with tech, design, and business from Dhaka, Bangladesh." />
+    <meta name="keywords" content="Shabab Ahmed Tazin, tech explorer, BBA student, tech enthusiast, Dhaka, Bangladesh, learning to code, product design, vibe coder" />
+    <meta name="author" content="Shabab Ahmed Tazin" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shabab Ahmed Tazin | Tech Explorer" />
+    <meta property="og:description" content="Yo, I'm Shabab—BBA student who's lowkey obsessed with tech and business. Building stuff, learning everything, just vibing." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Shabab Ahmed Tazin | Tech Explorer" />
+    <meta property="twitter:description" content="Yo, I'm Shabab—BBA student who's lowkey obsessed with tech and business. Building stuff, learning everything, just vibing." />
+
+    <!-- Tailwind Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          screens: {
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+          },
+          extend: {
+            colors: {
+              navy: 'var(--black-900)',
+              'deep-blue': 'var(--black-800)',
+              purple: 'var(--blue)',
+              coral: 'var(--pink)',
+              gold: 'var(--blue-light)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            borderRadius: {
+              '2xl': '1rem',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-up': 'slideUp 0.5s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            }
+          },
+        },
+      }
+    </script>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Import Map -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react/": "https://esm.sh/react@18.3.1/",
+        "react-dom": "https://esm.sh/react-dom@18.3.1",
+        "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+        "lucide-react": "https://esm.sh/lucide-react@0.344.0?external=react,react-dom",
+        "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.16.1?external=react,react-dom,three",
+        "three": "https://esm.sh/three@0.163.0",
+        "framer-motion": "https://esm.sh/framer-motion@11.0.24?external=react,react-dom",
+        "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?external=react,react-dom",
+        "@react-three/drei": "https://esm.sh/@react-three/drei@9.105.4?external=react,react-dom,three,@react-three/fiber",
+        "@formspree/react": "https://esm.sh/@formspree/react@2.5.1?external=react,react-dom",
+        "next-themes": "https://esm.sh/next-themes@0.3.0?external=react,react-dom",
+        "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.2"
+      }
+    }
+    </script>
+    <style>
+      /* Accessibility: Focus Visible styles */
+      :focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
+      }
+      /* Smooth Scroll Padding for fixed header */
+      html {
+        scroll-padding-top: 100px;
+      }
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-navy text-white antialiased selection:bg-coral selection:text-white" style="background-color: var(--black-900); color: var(--white-90);">
+    <div id="root"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

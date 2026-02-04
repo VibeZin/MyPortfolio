@@ -1,0 +1,29 @@
+{
+  "techInterests": [
+    {
+      "name": "High-End Hardware",
+      "description": "Deep understanding of CPU/GPU architectures.",
+      "proficiency": 95,
+      "icon": "Cpu",
+      "color": "#e94560"
+    }
+  ],
+  "business": [
+    {
+      "name": "Crypto & Web3",
+      "description": "Active trader in DeFi and Bitcoin.",
+      "proficiency": 85,
+      "icon": "Bitcoin",
+      "color": "#f7931a"
+    }
+  ],
+  "development": [
+    {
+      "name": "Vibe Coding",
+      "description": "Building complex apps rapidly using AI.",
+      "proficiency": 98,
+      "icon": "Sparkles",
+      "color": "#d946ef"
+    }
+  ]
+}

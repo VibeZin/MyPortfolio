@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* LIGHT MODE (Default) */
+  
+  /* Backgrounds */
+  --black-900: #ffffff;      /* Main Background */
+  --black-800: #f1f5f9;      /* Cards / Surfaces - Slightly darker than bg for contrast */
+  --black-700: #cbd5e1;      /* Borders / Separators - Visible grey */
+  --black-600: #94a3b8;      /* Interactive States */
+
+  /* Text Colors */
+  --white: #0f172a;          /* Primary Headings (Dark in light mode) */
+  --white-90: #334155;       /* Body Text (Dark Grey) */
+  --white-60: #64748b;       /* Muted Text (Medium Grey) */
+  --white-30: #94a3b8;       /* Very Muted */
+
+  /* Gold Accents */
+  --gold: #D4AF37;
+  --gold-light: #F4C430;
+  --gold-dim: #AA8C2C;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+
+  /* Brand Colors (Referenced in Tailwind Config) */
+  --pink: #db2777;           /* Coral/Pink accent */
+  --blue: #2563eb;           /* Blue/Purple accent */
+  --blue-light: #60a5fa;
+  --blue-glow: rgba(37, 99, 235, 0.2);
+
+  /* Silver Accents */
+  --silver: #475569;
+  --silver-dim: #64748b;
+  --silver-glow: rgba(71, 85, 105, 0.1);
+
+  /* Glass Effect */
+  --glass: rgba(255, 255, 255, 0.85);
+  --glass-light: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  /* DARK MODE (Overrides) */
+  
+  /* Backgrounds */
+  --black-900: #080810;
+  --black-800: #0e0e17;
+  --black-700: #161620;
+  --black-600: #1f1f2e;
+
+  /* Text Colors */
+  --white: #ffffff;
+  --white-90: #e8e8ee;
+  --white-60: #9898a8;
+  --white-30: #4a4a5a;
+
+  /* Brand Colors */
+  --pink: #ec4899;
+  --blue: #3b82f6;
+  --blue-light: #60a5fa;
+  --blue-glow: rgba(59, 130, 246, 0.3);
+
+  /* Gold Accents */
+  --gold: #D4AF37;
+  --gold-light: #F4C430;
+  --gold-dim: #AA8C2C;
+  --gold-glow: rgba(212, 175, 55, 0.3);
+
+  /* Silver Accents */
+  --silver: #E2E8F0;
+  --silver-dim: #94A3B8;
+  --silver-glow: rgba(226, 232, 240, 0.15);
+
+  /* Glass Effect */
+  --glass: rgba(14, 14, 23, 0.65);
+  --glass-light: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-500 ease-in-out;
+    background-color: var(--black-900);
+    color: var(--white-90);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black-600);
+  border-radius: 5px;
+  border: 2px solid var(--black-900);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Utilities */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-light);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--white) 0%, var(--silver) 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide default cursor only on desktop when not touch */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
