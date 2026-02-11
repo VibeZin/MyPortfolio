@@ -13,8 +13,8 @@ export const Projects: React.FC = () => {
         className="relative z-10 p-8 border border-[var(--black-600)] rounded-2xl bg-[var(--black-800)]/50 backdrop-blur-md max-w-2xl"
       >
         <div className="flex justify-center mb-6">
-          <div className="p-4 bg-[var(--gold)]/10 rounded-full">
-            <Construction size={48} className="text-[var(--gold)]" />
+          <div className="p-4 bg-[var(--silver)]/10 rounded-full">
+            <Construction size={48} className="text-[var(--silver)]" />
           </div>
         </div>
         
@@ -30,7 +30,7 @@ export const Projects: React.FC = () => {
           href="https://github.com/VibeZin" 
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--white)] text-[var(--black-900)] font-bold rounded-full hover:bg-[var(--gold)] transition-colors duration-300"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--white)] text-[var(--black-900)] font-bold rounded-full hover:bg-[var(--silver)] transition-colors duration-300"
         >
           <Github size={20} />
           Peep My GitHub

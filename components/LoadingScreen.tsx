@@ -34,7 +34,7 @@ export const LoadingScreen: React.FC<{ onComplete?: () => void }> = ({ onComplet
     >
       {/* Background Pulse */}
       <motion.div 
-        className="absolute inset-0 bg-radial-gradient from-[var(--gold-glow)] to-transparent"
+        className="absolute inset-0 bg-radial-gradient from-[var(--silver-glow)] to-transparent"
         animate={{ opacity: [0.5, 0.8, 0.5] }}
         transition={{ duration: 2, repeat: Infinity }}
       />
@@ -43,7 +43,7 @@ export const LoadingScreen: React.FC<{ onComplete?: () => void }> = ({ onComplet
         {/* Animated Logo Container */}
         <div className="relative w-32 h-32 mb-12">
             <motion.div 
-                className="absolute inset-0 border-2 border-t-[var(--gold)] border-r-transparent border-b-transparent border-l-transparent rounded-full"
+                className="absolute inset-0 border-2 border-t-[var(--silver)] border-r-transparent border-b-transparent border-l-transparent rounded-full"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
@@ -85,7 +85,7 @@ export const LoadingScreen: React.FC<{ onComplete?: () => void }> = ({ onComplet
           {/* Progress Bar Track */}
           <div className="h-1 w-full bg-[var(--white-30)] rounded-full overflow-hidden">
             <motion.div 
-              className="h-full bg-gradient-to-r from-[var(--gold)] via-[var(--silver)] to-white"
+              className="h-full bg-gradient-to-r from-[var(--silver)] via-[var(--silver)] to-white"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ ease: "linear" }}

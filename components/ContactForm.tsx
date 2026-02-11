@@ -14,14 +14,14 @@ export const ContactForm: React.FC = () => {
         particleCount: 150,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#D4AF37', '#E2E8F0', '#FFFFFF'],
+        colors: ['#c0c0c0', '#e8e8e8', '#FFFFFF'],
         disableForReducedMotion: true
       });
     }
   }, [state.succeeded]);
 
-  const inputClasses = "w-full pl-12 pr-4 py-4 bg-[var(--black-700)] border border-[var(--black-600)] rounded-xl focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)] outline-none transition-all duration-300 placeholder:text-[var(--white-30)] text-[var(--white-90)] group-hover:border-[var(--white-30)]";
-  const iconClasses = "absolute left-4 top-4 text-[var(--white-60)] group-focus-within:text-[var(--gold)] transition-colors duration-300";
+  const inputClasses = "w-full pl-12 pr-4 py-4 bg-[var(--black-700)] border border-[var(--black-600)] rounded-xl focus:border-[var(--silver)] focus:ring-1 focus:ring-[var(--silver)] outline-none transition-all duration-300 placeholder:text-[var(--white-30)] text-[var(--white-90)] group-hover:border-[var(--white-30)]";
+  const iconClasses = "absolute left-4 top-4 text-[var(--white-60)] group-focus-within:text-[var(--silver)] transition-colors duration-300";
 
   if (state.succeeded) {
     return (
@@ -97,7 +97,7 @@ export const ContactForm: React.FC = () => {
             <button
                 type="submit"
                 disabled={state.submitting}
-                className="w-full py-4 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dim)] text-black font-bold rounded-xl shadow-lg shadow-[var(--gold-glow)] hover:shadow-[var(--gold-dim)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full py-4 bg-gradient-to-r from-[var(--silver)] to-[var(--silver-dark)] text-black font-bold rounded-xl shadow-lg shadow-[var(--silver-glow)] hover:shadow-[var(--silver-dark)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
                 {state.submitting ? (
                     <>

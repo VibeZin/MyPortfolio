@@ -15,7 +15,7 @@ export const NotFound: React.FC = () => {
             opacity: [0.3, 0.5, 0.3] 
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--gold)]/20 rounded-full blur-[100px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--silver)]/20 rounded-full blur-[100px]"
         />
       </div>
 
@@ -35,7 +35,7 @@ export const NotFound: React.FC = () => {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="flex flex-col items-center"
           >
-            <Rocket size={64} className="text-[var(--gold)] mb-4 drop-shadow-[0_0_15px_var(--gold-glow)]" />
+            <Rocket size={64} className="text-[var(--silver)] mb-4 drop-shadow-[0_0_15px_var(--silver-glow)]" />
             <h2 className="text-3xl md:text-5xl font-display font-bold text-[var(--white)] mb-4">
               You're lost bestie
             </h2>
@@ -45,9 +45,9 @@ export const NotFound: React.FC = () => {
 
             <Link 
               to="/"
-              className="group relative px-8 py-3 bg-[var(--glass)] border border-[var(--glass-light)] rounded-full text-[var(--white)] font-medium overflow-hidden transition-all hover:border-[var(--white-30)] hover:shadow-lg hover:shadow-[var(--gold-glow)]"
+              className="group relative px-8 py-3 bg-[var(--glass)] border border-[var(--glass-light)] rounded-full text-[var(--white)] font-medium overflow-hidden transition-all hover:border-[var(--white-30)] hover:shadow-lg hover:shadow-[var(--silver-glow)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--gold)] to-[var(--white)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--silver)] to-[var(--white)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex items-center gap-2">
                 <Home size={18} className="group-hover:text-black transition-colors" />
                 <span className="group-hover:text-black transition-colors">Take Me Home</span>

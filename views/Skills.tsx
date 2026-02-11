@@ -41,7 +41,7 @@ const SKILLS_DATA: SkillData[] = [
     description: "Making interfaces that don't make people rage quit.",
     proficiency: 85,
     icon: <PenTool size={24} />,
-    color: '#D4AF37', // Gold
+    color: '#c0c0c0', // Gold
     className: 'md:col-span-1'
   },
   {
@@ -69,7 +69,7 @@ const SKILLS_DATA: SkillData[] = [
     description: "Finding the weirdest solutions that somehow work.",
     proficiency: 90,
     icon: <Zap size={24} />,
-    color: '#F4C430' // Light Gold
+    color: '#e8e8e8' // Light Gold
   },
 
   // --- Category 2: What Gets Me Hyped ---
@@ -80,7 +80,7 @@ const SKILLS_DATA: SkillData[] = [
     description: "Websites that make you go 'wait, this is fire'.",
     proficiency: 95,
     icon: <Layout size={24} />,
-    color: '#D4AF37', // Gold
+    color: '#c0c0c0', // Gold
     className: 'md:col-span-2'
   },
   {
@@ -108,7 +108,7 @@ const SKILLS_DATA: SkillData[] = [
     description: "CPUs, GPUs, and all the magic underneath.",
     proficiency: 90,
     icon: <Box size={24} />,
-    color: '#F4C430' // Light Gold
+    color: '#e8e8e8' // Light Gold
   },
 
   // --- Category 3: My Toolkit ---
@@ -119,7 +119,7 @@ const SKILLS_DATA: SkillData[] = [
     description: "Where the magic happens (design-wise).",
     proficiency: 85,
     icon: <PenTool size={24} />,
-    color: '#D4AF37' // Gold
+    color: '#c0c0c0' // Gold
   },
   {
     id: 't2',
@@ -156,7 +156,7 @@ export const Skills: React.FC = () => {
       {/* Header Section */}
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-          Stuff that keeps me up <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--white)] to-[var(--gold)]">at night</span>
+          Stuff that keeps me up <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--white)] to-[var(--silver)]">at night</span>
         </h1>
         <p className="text-[var(--white-60)] max-w-2xl mx-auto text-lg mb-8">
           Still figuring out where I fit in all this, but honestly? The journey slaps.
@@ -170,7 +170,7 @@ export const Skills: React.FC = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                 activeCategory === cat
-                  ? 'bg-[var(--gold)] text-black shadow-lg shadow-[var(--gold-glow)] scale-105'
+                  ? 'bg-[var(--silver)] text-black shadow-lg shadow-[var(--silver-glow)] scale-105'
                   : 'bg-[var(--black-700)] text-[var(--white-60)] hover:bg-[var(--black-600)] hover:text-[var(--white)] border border-[var(--black-600)]'
               }`}
             >
@@ -212,7 +212,7 @@ export const Skills: React.FC = () => {
       {/* Footer Note */}
       <div className="mt-16 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--black-700)] border border-[var(--black-600)] text-[var(--white-60)] text-sm">
-          <Rocket size={16} className="text-[var(--gold)]" />
+          <Rocket size={16} className="text-[var(--silver)]" />
           <span>(in a good way)</span>
         </div>
       </div>

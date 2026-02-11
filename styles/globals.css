@@ -25,20 +25,15 @@
   --white-30: #94a3b8;
   /* Very Muted */
 
-  /* Gold Accents (Primary Interactive) */
-  --gold: #D4AF37;
-  --gold-light: #F4C430;
-  --gold-dim: #AA8C2C;
-  --gold-glow: rgba(212, 175, 55, 0.25);
+  /* Silver Accents (Primary Interactive) */
+  --silver: #c0c0c0;
+  --silver-light: #e8e8e8;
+  --silver-dark: #808080;
+  --silver-glow: rgba(192, 192, 192, 0.25);
 
-  /* Silver System (Secondary Accents) */
-  --silver: #808080;
-  --silver-light: #c0c0c0;
-  --silver-dark: #475569;
-  --silver-glow: rgba(128, 128, 128, 0.2);
-
-  --platinum: #94a3b8;
-  --platinum-glow: rgba(148, 163, 184, 0.15);
+  /* Platinum (Secondary) */
+  --platinum: #e5e5e5;
+  --platinum-glow: rgba(229, 229, 229, 0.20);
 
   --charcoal: #334155;
   --obsidian: #1e293b;
@@ -63,20 +58,15 @@
   --white-60: #9898a8;
   --white-30: #4a4a5a;
 
-  /* Gold Accents (Primary Interactive) */
-  --gold: #D4AF37;
-  --gold-light: #F4C430;
-  --gold-dim: #AA8C2C;
-  --gold-glow: rgba(212, 175, 55, 0.3);
-
-  /* Silver System (Secondary Accents) */
+  /* Silver Accents (Primary Interactive) */
   --silver: #c0c0c0;
   --silver-light: #e8e8e8;
   --silver-dark: #808080;
-  --silver-glow: rgba(192, 192, 192, 0.25);
+  --silver-glow: rgba(192, 192, 192, 0.3);
 
+  /* Platinum (Secondary) */
   --platinum: #e5e5e5;
-  --platinum-glow: rgba(229, 229, 229, 0.20);
+  --platinum-glow: rgba(229, 229, 229, 0.25);
 
   --charcoal: #2a2a2a;
   --obsidian: #1a1a1a;
@@ -110,7 +100,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold);
+  background: var(--silver);
 }
 
 /* Utilities */

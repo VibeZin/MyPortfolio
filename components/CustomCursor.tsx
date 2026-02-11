@@ -71,8 +71,8 @@ export const CustomCursor: React.FC = () => {
           y: mouseY, 
           translateX: '-50%', 
           translateY: '-50%',
-          background: 'var(--gold)',
-          boxShadow: '0 0 6px var(--gold)'
+          background: 'var(--silver)',
+          boxShadow: '0 0 6px var(--silver)'
         }}
         animate={{
           scale: isClicking ? 0.8 : isHovering ? 1.5 : 1,
@@ -93,7 +93,7 @@ export const CustomCursor: React.FC = () => {
         animate={{
           scale: isClicking ? 1.5 : isHovering ? 2 : 1,
           opacity: isVisible ? 0.6 : 0,
-          borderColor: isHovering ? 'var(--gold)' : 'var(--white-60)'
+          borderColor: isHovering ? 'var(--silver)' : 'var(--white-60)'
         }}
         transition={{ duration: 0.15 }}
       />
@@ -106,7 +106,7 @@ export const CustomCursor: React.FC = () => {
           y: trailY, 
           translateX: '-50%', 
           translateY: '-50%',
-          background: 'var(--gold-glow)'
+          background: 'var(--silver-glow)'
         }}
         animate={{
           opacity: isVisible ? (isHovering ? 0.4 : 0.15) : 0,

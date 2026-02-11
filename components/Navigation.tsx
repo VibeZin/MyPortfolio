@@ -50,7 +50,7 @@ export const Navigation: React.FC = () => {
             <motion.div
               whileHover={{ rotate: 180 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--gold)] to-[var(--silver)] shadow-sm"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--silver)] to-[var(--silver)] shadow-sm"
             >
               <span className="font-display font-bold text-lg text-black tracking-tighter">SA</span>
             </motion.div>
@@ -73,7 +73,7 @@ export const Navigation: React.FC = () => {
                   {isActive && (
                     <motion.div
                       layoutId="nav-pill"
-                      className="absolute inset-0 bg-[var(--gold)] rounded-full -z-10 shadow-sm"
+                      className="absolute inset-0 bg-[var(--silver)] rounded-full -z-10 shadow-sm"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -87,7 +87,7 @@ export const Navigation: React.FC = () => {
             {/* Theme Toggle */}
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2.5 rounded-full bg-[var(--black-800)] text-[var(--gold)] hover:scale-110 hover:shadow-md transition-all duration-300 border border-[var(--black-700)] flex-shrink-0"
+              className="p-2.5 rounded-full bg-[var(--black-800)] text-[var(--silver)] hover:scale-110 hover:shadow-md transition-all duration-300 border border-[var(--black-700)] flex-shrink-0"
               aria-label="Toggle Dark Mode"
             >
               <AnimatePresence mode="wait">
@@ -107,7 +107,7 @@ export const Navigation: React.FC = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-full text-[var(--white-90)] hover:text-[var(--gold)] transition-colors"
+                className="p-2 rounded-full text-[var(--white-90)] hover:text-[var(--silver)] transition-colors"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -129,7 +129,7 @@ export const Navigation: React.FC = () => {
             {/* Mobile Menu Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-6 right-6 p-2 text-[var(--white-60)] hover:text-[var(--gold)]"
+              className="absolute top-6 right-6 p-2 text-[var(--white-60)] hover:text-[var(--silver)]"
             >
               <X size={32} />
             </button>
@@ -146,7 +146,7 @@ export const Navigation: React.FC = () => {
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={`text-4xl font-display font-bold ${location.pathname === link.path
-                        ? 'text-[var(--gold)]'
+                        ? 'text-[var(--silver)]'
                         : 'text-[var(--white)] hover:text-[var(--white-60)]'
                       } transition-colors`}
                   >

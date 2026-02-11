@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
           {/* Brand & Copyright */}
           <div className="text-center md:text-left space-y-4">
              <div className="flex items-center justify-center md:justify-start gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[var(--gold)] to-[var(--white)] flex items-center justify-center font-bold text-black">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[var(--silver)] to-[var(--white)] flex items-center justify-center font-bold text-black">
                     SA
                 </div>
                 <h3 className="text-xl font-display font-bold text-[var(--white)]">Shabab Ahmed Tazin</h3>
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ y: -5, scale: 1.1 }}
-                className="p-3 bg-[var(--black-700)] rounded-full text-[var(--white-60)] hover:text-black hover:bg-[var(--gold)] hover:shadow-[0_0_15px_var(--gold-glow)] transition-all duration-300 border border-[var(--black-600)] group"
+                className="p-3 bg-[var(--black-700)] rounded-full text-[var(--white-60)] hover:text-black hover:bg-[var(--silver)] hover:shadow-[0_0_15px_var(--silver-glow)] transition-all duration-300 border border-[var(--black-600)] group"
                 aria-label={social.label}
               >
                 <social.icon size={20} className="transition-colors" />
@@ -67,12 +67,12 @@ export const Footer: React.FC = () => {
               <input 
                 type="email" 
                 placeholder="email@example.com" 
-                className="bg-[var(--black-700)] border border-[var(--black-600)] rounded-xl px-4 py-2 text-sm text-[var(--white)] focus:border-[var(--gold)] outline-none w-full max-w-[200px] transition-colors placeholder:text-[var(--white-30)]"
+                className="bg-[var(--black-700)] border border-[var(--black-600)] rounded-xl px-4 py-2 text-sm text-[var(--white)] focus:border-[var(--silver)] outline-none w-full max-w-[200px] transition-colors placeholder:text-[var(--white-30)]"
               />
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dim)] rounded-xl text-black shadow-lg shadow-[var(--gold-glow)]"
+                className="p-2 bg-gradient-to-r from-[var(--silver)] to-[var(--silver-dark)] rounded-xl text-black shadow-lg shadow-[var(--silver-glow)]"
               >
                 <Send size={18} />
               </motion.button>
@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 p-3 bg-[var(--gold)] text-black rounded-full shadow-lg shadow-[var(--gold-glow)] hover:bg-[var(--white)] hover:text-black transition-colors z-50 group"
+            className="fixed bottom-8 right-8 p-3 bg-[var(--silver)] text-black rounded-full shadow-lg shadow-[var(--silver-glow)] hover:bg-[var(--white)] hover:text-black transition-colors z-50 group"
           >
             <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />
           </motion.button>

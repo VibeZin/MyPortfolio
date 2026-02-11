@@ -49,7 +49,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--black-800)] to-transparent" />
             
             <div className="absolute bottom-6 left-6 md:left-8">
-              <span className="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-black uppercase bg-[var(--gold)] rounded-full">
+              <span className="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-black uppercase bg-[var(--silver)] rounded-full">
                 {project.category}
               </span>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white">
@@ -81,7 +81,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3 bg-[var(--gold)] hover:bg-white hover:text-black text-black font-bold rounded-xl transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-3 bg-[var(--silver)] hover:bg-white hover:text-black text-black font-bold rounded-xl transition-all"
                   >
                     <ExternalLink size={20} />
                     Live Demo

@@ -17,7 +17,7 @@ export const About: React.FC = () => {
     <PageWrapper>
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--white)] to-[var(--gold)]">Story</span>
+          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--white)] to-[var(--silver)]">Story</span>
         </h1>
         <p className="text-[var(--white-90)] max-w-2xl mx-auto text-lg leading-relaxed">
           Yo, I'm Shabab—BBA student who's lowkey obsessed with tech and business. Like, how do CPUs even work? How do companies scale? I'm just here figuring it out, building stuff that seems cool, and seeing where it goes. No CS degree, just vibes and curiosity.
@@ -38,7 +38,7 @@ export const About: React.FC = () => {
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
             {['Claude', 'Google', 'Caffeine', 'Late Nights'].map((tool) => (
-              <span key={tool} className="px-3 py-1 bg-[var(--black-700)] hover:bg-[var(--black-600)] border border-[var(--black-600)] rounded-full text-xs font-medium text-[var(--gold)] transition-colors">
+              <span key={tool} className="px-3 py-1 bg-[var(--black-700)] hover:bg-[var(--black-600)] border border-[var(--black-600)] rounded-full text-xs font-medium text-[var(--silver)] transition-colors">
                 {tool}
               </span>
             ))}
@@ -78,9 +78,9 @@ export const About: React.FC = () => {
         >
           <div className="space-y-8 relative pl-4 border-l-2 border-[var(--black-600)] ml-2 mt-2">
             <div className="relative">
-              <span className="absolute -left-[25px] top-1 w-4 h-4 rounded-full bg-[var(--gold)] ring-4 ring-[var(--black-800)]" />
+              <span className="absolute -left-[25px] top-1 w-4 h-4 rounded-full bg-[var(--silver)] ring-4 ring-[var(--black-800)]" />
               <h4 className="text-[var(--white)] font-bold text-lg">BBA Student</h4>
-              <p className="text-[var(--gold)] text-sm font-semibold mb-1">Current</p>
+              <p className="text-[var(--silver)] text-sm font-semibold mb-1">Current</p>
               <p className="text-[var(--white-60)] text-sm">University of Asia Pacific</p>
               <p className="text-[var(--white-60)] text-xs mt-1 italic">Learning business stuff while building random projects on the side.</p>
             </div>
@@ -114,12 +114,12 @@ export const About: React.FC = () => {
         
         {/* Card 6: Philosophy */}
          <AboutCard 
-          className="lg:col-span-2 bg-gradient-to-br from-[var(--black-800)] to-[var(--gold)]/5 border-l-[3px]"
-          style={{ borderLeftColor: 'var(--gold)' }} 
+          className="lg:col-span-2 bg-gradient-to-br from-[var(--black-800)] to-[var(--silver)]/5 border-l-[3px]"
+          style={{ borderLeftColor: 'var(--silver)' }} 
           delay={0.6}
         >
           <div className="h-full flex flex-col justify-center items-center text-center p-6">
-             <Lightbulb className="text-[var(--gold)] opacity-50 mb-4" size={32} />
+             <Lightbulb className="text-[var(--silver)] opacity-50 mb-4" size={32} />
              <p className="text-[var(--white-90)] text-lg font-medium italic">
               "I believe design and tech should work together. I trust my intuition, but always keep learning."
              </p>

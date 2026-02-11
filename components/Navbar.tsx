@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-[var(--gold)] rounded-lg group-hover:bg-[var(--gold-light)] transition-colors duration-300">
+            <div className="p-2 bg-[var(--silver)] rounded-lg group-hover:bg-[var(--silver-light)] transition-colors duration-300">
               <Terminal size={24} className="text-black" />
             </div>
             <span className="font-display font-bold text-xl tracking-wide text-white">DEV.PORTFOLIO</span>
@@ -43,15 +43,15 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-[var(--gold)] ${
-                    location.pathname === item.path ? 'text-[var(--gold)]' : 'text-gray-300'
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-[var(--silver)] ${
+                    location.pathname === item.path ? 'text-[var(--silver)]' : 'text-gray-300'
                   }`}
                 >
                   {item.label}
                   {location.pathname === item.path && (
                     <motion.div
                       layoutId="underline"
-                      className="absolute left-0 right-0 bottom-0 h-0.5 bg-[var(--gold)]"
+                      className="absolute left-0 right-0 bottom-0 h-0.5 bg-[var(--silver)]"
                     />
                   )}
                 </Link>
@@ -87,7 +87,7 @@ export const Navbar: React.FC = () => {
                   to={item.path}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     location.pathname === item.path
-                      ? 'bg-[var(--gold)]/20 text-[var(--gold)]'
+                      ? 'bg-[var(--silver)]/20 text-[var(--silver)]'
                       : 'text-gray-300 hover:bg-white/5 hover:text-white'
                   }`}
                 >

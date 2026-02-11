@@ -54,7 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY }}
         whileHover={{ scale: 1.02 }}
-        className="group relative h-full bg-[var(--black-800)] rounded-2xl overflow-hidden border border-[var(--black-600)] shadow-xl hover:shadow-2xl hover:shadow-[var(--gold-glow)] transition-all duration-500 cursor-pointer flex flex-col"
+        className="group relative h-full bg-[var(--black-800)] rounded-2xl overflow-hidden border border-[var(--black-600)] shadow-xl hover:shadow-2xl hover:shadow-[var(--silver-glow)] transition-all duration-500 cursor-pointer flex flex-col"
       >
         {/* Thumbnail */}
         <div className="relative h-48 overflow-hidden">
@@ -75,11 +75,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
         {/* Content */}
         <div className="p-6 flex flex-col flex-grow">
           <div className="flex justify-between items-start mb-2">
-            <h3 className="text-xl font-display font-bold text-[var(--white)] group-hover:text-[var(--gold)] transition-colors">
+            <h3 className="text-xl font-display font-bold text-[var(--white)] group-hover:text-[var(--silver)] transition-colors">
               {project.title}
             </h3>
             {project.featured && (
-              <span className="text-[10px] font-bold uppercase tracking-wider text-black bg-[var(--gold)] px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-black bg-[var(--silver)] px-2 py-0.5 rounded-full">
                 Featured
               </span>
             )}
@@ -101,7 +101,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t border-[var(--black-600)] mt-auto">
-             <button className="text-sm text-[var(--gold)] font-medium flex items-center gap-1 hover:gap-2 transition-all">
+             <button className="text-sm text-[var(--silver)] font-medium flex items-center gap-1 hover:gap-2 transition-all">
                 Details <ArrowRight size={16} />
              </button>
              <div className="flex gap-3">

@@ -41,8 +41,8 @@ const MagneticButton: React.FC<{ children: React.ReactNode; className?: string; 
 
   const baseStyles = "relative px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all duration-300 overflow-hidden group";
   const variants = {
-    primary: "bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dim)] text-black shadow-lg shadow-[var(--gold-glow)] hover:shadow-[var(--gold-dim)] border border-transparent",
-    outline: "bg-[var(--glass)] border border-[var(--black-700)] text-[var(--white)] hover:bg-[var(--black-800)] hover:border-[var(--gold)] backdrop-blur-sm"
+    primary: "bg-gradient-to-r from-[var(--silver)] to-[var(--silver-dark)] text-black shadow-lg shadow-[var(--silver-glow)] hover:shadow-[var(--silver-dark)] border border-transparent",
+    outline: "bg-[var(--glass)] border border-[var(--black-700)] text-[var(--white)] hover:bg-[var(--black-800)] hover:border-[var(--silver)] backdrop-blur-sm"
   };
 
   return (
@@ -87,7 +87,7 @@ export const Home: React.FC = () => {
       
       {/* Religious Header */}
       <div className="absolute top-12 left-0 right-0 text-center opacity-40 z-0">
-        <span className="font-display text-sm tracking-[0.2em] text-[var(--gold)]">BISMILLAHIR RAHMANIR RAHIM</span>
+        <span className="font-display text-sm tracking-[0.2em] text-[var(--silver)]">BISMILLAHIR RAHMANIR RAHIM</span>
       </div>
 
       {/* Main Content Grid */}
@@ -101,14 +101,14 @@ export const Home: React.FC = () => {
           className="order-2 lg:order-1 text-center lg:text-left z-10"
         >
           {/* Tagline */}
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--black-800)] border border-[var(--black-700)] text-[var(--gold)] mb-6 backdrop-blur-md">
+          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--black-800)] border border-[var(--black-700)] text-[var(--silver)] mb-6 backdrop-blur-md">
             <span className="text-sm font-medium tracking-wide">Just vibing with tech and business tbh</span>
           </motion.div>
 
           {/* Name - Adjusted font sizes and added whitespace-nowrap */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold mb-4 tracking-tight leading-tight text-[var(--white)]">
             I'm <br />
-            <span className="text-[var(--gold)] drop-shadow-[0_0_15px_var(--gold-glow)] whitespace-nowrap">
+            <span className="text-[var(--silver)] drop-shadow-[0_0_15px_var(--silver-glow)] whitespace-nowrap">
               <AnimatedTitle text="Shabab Ahmed" />
             </span>
           </h1>
@@ -139,7 +139,7 @@ export const Home: React.FC = () => {
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
             {/* Glowing Backdrop */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--gold)] to-[var(--white)] rounded-full blur-[60px] opacity-20 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--silver)] to-[var(--white)] rounded-full blur-[60px] opacity-20 animate-pulse" />
             
             {/* Floating Container */}
             <motion.div
@@ -161,7 +161,7 @@ export const Home: React.FC = () => {
             <motion.div 
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-              className="absolute inset-[-20px] rounded-full border border-[var(--gold)]/30 border-dashed"
+              className="absolute inset-[-20px] rounded-full border border-[var(--silver)]/30 border-dashed"
             />
           </div>
         </motion.div>

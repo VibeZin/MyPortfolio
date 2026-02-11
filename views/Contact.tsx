@@ -9,7 +9,7 @@ export const Contact: React.FC = () => {
     <PageWrapper>
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-          Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--white)] to-[var(--gold)]">Talk</span>
+          Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--white)] to-[var(--silver)]">Talk</span>
         </h1>
         <p className="text-[var(--white-60)] max-w-2xl mx-auto text-lg">
           Down to chat anytime—tech stuff, business ideas, the latest phone drops, GPU specs, whatever. My DMs are open fr fr.
@@ -27,13 +27,13 @@ export const Contact: React.FC = () => {
         >
             {/* Info Card */}
             <div className="bg-[var(--black-800)]/50 border border-[var(--black-600)] rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--gold)]/10 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-[var(--gold)]/20 transition-colors duration-500" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--silver)]/10 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-[var(--silver)]/20 transition-colors duration-500" />
                 
                 <h3 className="text-2xl font-bold text-[var(--white)] mb-6 relative z-10">Hit Me Up</h3>
                 
                 <div className="space-y-6 relative z-10">
-                    <a href="mailto:shababahmedtazin2021@gmail.com" className="flex items-center gap-4 text-[var(--white-90)] hover:text-[var(--gold)] transition-colors group/item">
-                        <div className="p-3 bg-[var(--black-700)] rounded-xl border border-[var(--black-600)] group-hover/item:border-[var(--gold)]/50 group-hover/item:bg-[var(--gold)]/10 transition-all duration-300">
+                    <a href="mailto:shababahmedtazin2021@gmail.com" className="flex items-center gap-4 text-[var(--white-90)] hover:text-[var(--silver)] transition-colors group/item">
+                        <div className="p-3 bg-[var(--black-700)] rounded-xl border border-[var(--black-600)] group-hover/item:border-[var(--silver)]/50 group-hover/item:bg-[var(--silver)]/10 transition-all duration-300">
                             <Mail size={24} />
                         </div>
                         <div>

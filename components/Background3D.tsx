@@ -194,7 +194,7 @@ const ParticleNetwork = ({ count, reduceMotion, color }: { count: number, reduce
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" count={count} array={positions} itemSize={3} />
         </bufferGeometry>
-        <pointsMaterial size={0.05} color="#D4AF37" transparent opacity={0.6} sizeAttenuation={true} />
+        <pointsMaterial size={0.05} color="#c0c0c0" transparent opacity={0.6} sizeAttenuation={true} />
       </points>
       <lineSegments ref={linesRef}>
         <bufferGeometry>
@@ -274,7 +274,7 @@ export const Background3D: React.FC = () => {
         {reduceMotion && <ambientLight intensity={0.5} />}
 
         <ambientLight intensity={0.2} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#D4AF37" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="#c0c0c0" />
         <pointLight position={[-10, -10, -5]} intensity={0.5} color={theme === 'light' ? "#0f172a" : "#FFFFFF"} />
 
         <group>
