@@ -17,7 +17,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
   proficiency,
   icon,
   className = "",
-  color = "#3b82f6", // Default Blue
+  color = "#c0c0c0", // Default Silver
   delay = 0
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
-    
+
     // Calculate mouse position relative to center of card
     const mouseXFromCenter = e.clientX - rect.left - width / 2;
     const mouseYFromCenter = e.clientY - rect.top - height / 2;
@@ -68,7 +68,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
         className="group relative h-full flex flex-col justify-between p-6 rounded-2xl bg-[var(--black-800)] border border-[var(--black-600)] backdrop-blur-md overflow-hidden transition-colors hover:border-[var(--black-600)]"
       >
         {/* Dynamic Glow Background */}
-        <div 
+        <div
           className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"
           style={{ background: `radial-gradient(circle at center, ${color}, transparent 70%)` }}
         />
@@ -83,7 +83,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
 
         {/* Content */}
         <div className="relative z-10">
-          <h3 className="text-xl font-display font-bold text-[var(--white)] mb-2 group-hover:text-[var(--pink)] transition-colors">
+          <h3 className="text-xl font-display font-bold text-[var(--white)] mb-2 group-hover:text-[var(--platinum)] transition-colors">
             {name}
           </h3>
           <p className="text-sm text-[var(--white-60)] mb-6 line-clamp-2 group-hover:text-[var(--white-90)] transition-colors">

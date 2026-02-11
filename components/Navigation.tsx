@@ -16,7 +16,7 @@ const NAV_LINKS = [
 export const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  
+
   const location = useLocation();
   const { theme, setTheme } = useTheme();
 
@@ -29,7 +29,7 @@ export const Navigation: React.FC = () => {
       particleCount: 50,
       spread: 60,
       origin: { x: 0.1, y: 0.1 },
-      colors: ['#D4AF37', '#FFFFFF', '#E2E8F0'],
+      colors: ['#c0c0c0', '#e5e5e5', '#FFFFFF'],
       disableForReducedMotion: true
     });
   };
@@ -47,7 +47,7 @@ export const Navigation: React.FC = () => {
         >
           {/* Logo / Monogram */}
           <Link to="/" onClick={handleLogoClick} className="relative group flex-shrink-0">
-            <motion.div 
+            <motion.div
               whileHover={{ rotate: 180 }}
               transition={{ duration: 0.5 }}
               className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--gold)] to-[var(--silver)] shadow-sm"
@@ -60,16 +60,15 @@ export const Navigation: React.FC = () => {
           <div className="hidden md:flex items-center space-x-1">
             {NAV_LINKS.map((link) => {
               const isActive = location.pathname === link.path;
-              
+
               return (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    isActive 
-                      ? 'text-black font-bold' 
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isActive
+                      ? 'text-black font-bold'
                       : 'text-[var(--white-60)] hover:text-[var(--white)] hover:font-semibold'
-                  }`}
+                    }`}
                 >
                   {isActive && (
                     <motion.div
@@ -85,8 +84,8 @@ export const Navigation: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-             {/* Theme Toggle */}
-             <button
+            {/* Theme Toggle */}
+            <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2.5 rounded-full bg-[var(--black-800)] text-[var(--gold)] hover:scale-110 hover:shadow-md transition-all duration-300 border border-[var(--black-700)] flex-shrink-0"
               aria-label="Toggle Dark Mode"
@@ -127,8 +126,8 @@ export const Navigation: React.FC = () => {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-40 bg-[var(--black-900)] md:hidden flex items-center justify-center"
           >
-             {/* Mobile Menu Close Button */}
-             <button
+            {/* Mobile Menu Close Button */}
+            <button
               onClick={() => setIsOpen(false)}
               className="absolute top-6 right-6 p-2 text-[var(--white-60)] hover:text-[var(--gold)]"
             >
@@ -146,11 +145,10 @@ export const Navigation: React.FC = () => {
                   <Link
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`text-4xl font-display font-bold ${
-                      location.pathname === link.path 
-                        ? 'text-[var(--gold)]' 
+                    className={`text-4xl font-display font-bold ${location.pathname === link.path
+                        ? 'text-[var(--gold)]'
                         : 'text-[var(--white)] hover:text-[var(--white-60)]'
-                    } transition-colors`}
+                      } transition-colors`}
                   >
                     {link.name}
                   </Link>

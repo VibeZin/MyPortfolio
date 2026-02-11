@@ -22,21 +22,21 @@ const FloatingShape = () => {
       <mesh ref={meshRef}>
         <icosahedronGeometry args={[2.5, 0]} />
         <meshStandardMaterial
-          color="#3b82f6"
+          color="#c0c0c0"
           roughness={0.1}
           metalness={0.8}
           wireframe={true}
-          emissive="#ec4899"
+          emissive="#e5e5e5"
           emissiveIntensity={0.2}
         />
       </mesh>
       <mesh>
-         <icosahedronGeometry args={[2.3, 0]} />
-         <meshStandardMaterial
+        <icosahedronGeometry args={[2.3, 0]} />
+        <meshStandardMaterial
           color="#0e0e17"
           roughness={0.2}
           metalness={1}
-         />
+        />
       </mesh>
     </Float>
   );
@@ -50,8 +50,8 @@ export const HeroScene: React.FC = () => {
         <Environment preset="city" />
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#ec4899" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#3b82f6" />
+        <pointLight position={[10, 10, 10]} intensity={1.5} color="#e5e5e5" />
+        <pointLight position={[-10, -10, -10]} intensity={1} color="#c0c0c0" />
         <FloatingShape />
       </Canvas>
     </div>

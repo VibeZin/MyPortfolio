@@ -4,35 +4,44 @@
 
 :root {
   /* LIGHT MODE (Default) */
-  
+
   /* Backgrounds */
-  --black-900: #ffffff;      /* Main Background */
-  --black-800: #f1f5f9;      /* Cards / Surfaces - Slightly darker than bg for contrast */
-  --black-700: #cbd5e1;      /* Borders / Separators - Visible grey */
-  --black-600: #94a3b8;      /* Interactive States */
+  --black-900: #ffffff;
+  /* Main Background */
+  --black-800: #f1f5f9;
+  /* Cards / Surfaces - Slightly darker than bg for contrast */
+  --black-700: #cbd5e1;
+  /* Borders / Separators - Visible grey */
+  --black-600: #94a3b8;
+  /* Interactive States */
 
   /* Text Colors */
-  --white: #0f172a;          /* Primary Headings (Dark in light mode) */
-  --white-90: #334155;       /* Body Text (Dark Grey) */
-  --white-60: #64748b;       /* Muted Text (Medium Grey) */
-  --white-30: #94a3b8;       /* Very Muted */
+  --white: #0f172a;
+  /* Primary Headings (Dark in light mode) */
+  --white-90: #334155;
+  /* Body Text (Dark Grey) */
+  --white-60: #64748b;
+  /* Muted Text (Medium Grey) */
+  --white-30: #94a3b8;
+  /* Very Muted */
 
-  /* Gold Accents */
+  /* Gold Accents (Primary Interactive) */
   --gold: #D4AF37;
   --gold-light: #F4C430;
   --gold-dim: #AA8C2C;
   --gold-glow: rgba(212, 175, 55, 0.25);
 
-  /* Brand Colors (Referenced in Tailwind Config) */
-  --pink: #db2777;           /* Coral/Pink accent */
-  --blue: #2563eb;           /* Blue/Purple accent */
-  --blue-light: #60a5fa;
-  --blue-glow: rgba(37, 99, 235, 0.2);
+  /* Silver System (Secondary Accents) */
+  --silver: #808080;
+  --silver-light: #c0c0c0;
+  --silver-dark: #475569;
+  --silver-glow: rgba(128, 128, 128, 0.2);
 
-  /* Silver Accents */
-  --silver: #475569;
-  --silver-dim: #64748b;
-  --silver-glow: rgba(71, 85, 105, 0.1);
+  --platinum: #94a3b8;
+  --platinum-glow: rgba(148, 163, 184, 0.15);
+
+  --charcoal: #334155;
+  --obsidian: #1e293b;
 
   /* Glass Effect */
   --glass: rgba(255, 255, 255, 0.85);
@@ -41,7 +50,7 @@
 
 .dark {
   /* DARK MODE (Overrides) */
-  
+
   /* Backgrounds */
   --black-900: #080810;
   --black-800: #0e0e17;
@@ -54,22 +63,23 @@
   --white-60: #9898a8;
   --white-30: #4a4a5a;
 
-  /* Brand Colors */
-  --pink: #ec4899;
-  --blue: #3b82f6;
-  --blue-light: #60a5fa;
-  --blue-glow: rgba(59, 130, 246, 0.3);
-
-  /* Gold Accents */
+  /* Gold Accents (Primary Interactive) */
   --gold: #D4AF37;
   --gold-light: #F4C430;
   --gold-dim: #AA8C2C;
   --gold-glow: rgba(212, 175, 55, 0.3);
 
-  /* Silver Accents */
-  --silver: #E2E8F0;
-  --silver-dim: #94A3B8;
-  --silver-glow: rgba(226, 232, 240, 0.15);
+  /* Silver System (Secondary Accents) */
+  --silver: #c0c0c0;
+  --silver-light: #e8e8e8;
+  --silver-dark: #808080;
+  --silver-glow: rgba(192, 192, 192, 0.25);
+
+  --platinum: #e5e5e5;
+  --platinum-glow: rgba(229, 229, 229, 0.20);
+
+  --charcoal: #2a2a2a;
+  --obsidian: #1a1a1a;
 
   /* Glass Effect */
   --glass: rgba(14, 14, 23, 0.65);
@@ -111,7 +121,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--white) 0%, var(--silver) 50%, var(--gold) 100%);
+  background: linear-gradient(135deg, var(--silver), var(--white), var(--platinum));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

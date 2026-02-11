@@ -5,8 +5,8 @@ import { useTheme } from 'next-themes';
 import * as THREE from 'three';
 
 // --- Configuration ---
-const COLORS_DARK = ['#D4AF37', '#E2E8F0', '#FFFFFF']; // Gold, Silver, White
-const COLORS_LIGHT = ['#D4AF37', '#94a3b8', '#0f172a']; // Gold, Slate, Dark Blue
+const COLORS_DARK = ['#c0c0c0', '#e5e5e5', '#FFFFFF']; // Silver, Platinum, White
+const COLORS_LIGHT = ['#808080', '#c0c0c0', '#0f172a']; // Dark Silver, Silver, Dark
 
 const CONNECTION_DISTANCE = 3.5;
 const MOUSE_REPULSION_RADIUS = 4;
@@ -41,7 +41,7 @@ interface ShapeProps {
 const GeometricShape: React.FC<ShapeProps> = ({ position, color, type, scale, reduceMotion }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const initialPos = useRef(new THREE.Vector3(...position));
-  
+
   const rotationSpeed = useRef({
     x: (Math.random() - 0.5) * 0.2,
     y: (Math.random() - 0.5) * 0.2,
@@ -59,7 +59,7 @@ const GeometricShape: React.FC<ShapeProps> = ({ position, color, type, scale, re
 
     const driftX = Math.sin(time * 0.3 + position[0]) * 0.5;
     const driftY = Math.cos(time * 0.2 + position[1]) * 0.5;
-    
+
     const currentBasePos = new THREE.Vector3(
       initialPos.current.x + driftX,
       initialPos.current.y + driftY,
@@ -74,11 +74,11 @@ const GeometricShape: React.FC<ShapeProps> = ({ position, color, type, scale, re
       );
 
       const distance = mousePos.distanceTo(currentBasePos);
-      
+
       if (distance < MOUSE_REPULSION_RADIUS) {
         const direction = new THREE.Vector3().subVectors(currentBasePos, mousePos).normalize();
         const force = (MOUSE_REPULSION_RADIUS - distance) * MOUSE_REPULSION_STRENGTH;
-        
+
         meshRef.current.position.lerp(
           currentBasePos.add(direction.multiplyScalar(force)),
           0.1
@@ -86,7 +86,7 @@ const GeometricShape: React.FC<ShapeProps> = ({ position, color, type, scale, re
         return;
       }
     }
-    
+
     meshRef.current.position.lerp(currentBasePos, 0.05);
   });
 
@@ -137,7 +137,7 @@ const ParticleNetwork = ({ count, reduceMotion, color }: { count: number, reduce
   }, [count]);
 
   const positions = useMemo(() => new Float32Array(count * 3), [count]);
-  const linePositions = useMemo(() => new Float32Array(count * count * 3), [count]); 
+  const linePositions = useMemo(() => new Float32Array(count * count * 3), [count]);
 
   useFrame((state) => {
     if (!pointsRef.current || !linesRef.current || reduceMotion) return;
@@ -153,7 +153,7 @@ const ParticleNetwork = ({ count, reduceMotion, color }: { count: number, reduce
 
     particles.forEach((particle, i) => {
       particle.position.add(particle.velocity);
-      
+
       if (Math.abs(particle.position.x) > 12) particle.velocity.x *= -1;
       if (Math.abs(particle.position.y) > 12) particle.velocity.y *= -1;
 
@@ -210,7 +210,7 @@ export const Background3D: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const { theme } = useTheme();
-  
+
   // Use light colors if theme is light (and not system dark)
   // Simplified check: if theme is 'light', use LIGHT palette.
   const currentPalette = theme === 'light' ? COLORS_LIGHT : COLORS_DARK;
@@ -254,7 +254,7 @@ export const Background3D: React.FC = () => {
     addShapes(config.shapesSphere, 'sphere', [0.2, 0.7]);
     addShapes(config.shapesBox, 'box', [0.3, 0.9]);
     addShapes(config.shapesTorus, 'torus', [0.3, 0.8]);
-    
+
     return items;
   }, [config, currentPalette]);
 
@@ -263,7 +263,7 @@ export const Background3D: React.FC = () => {
       <Canvas
         camera={{ position: [0, 0, 15], fov: 60 }}
         dpr={config.dpr}
-        gl={{ 
+        gl={{
           antialias: !isMobile,
           alpha: true,
           powerPreference: "high-performance"
@@ -272,17 +272,17 @@ export const Background3D: React.FC = () => {
       >
         {!reduceMotion && <Environment preset={theme === 'light' ? 'studio' : 'night'} blur={0.8} />}
         {reduceMotion && <ambientLight intensity={0.5} />}
-        
+
         <ambientLight intensity={0.2} />
         <pointLight position={[10, 10, 10]} intensity={1} color="#D4AF37" />
         <pointLight position={[-10, -10, -5]} intensity={0.5} color={theme === 'light' ? "#0f172a" : "#FFFFFF"} />
-        
+
         <group>
           {shapes.map((shape, i) => (
-            <Float 
-              key={i} 
-              speed={reduceMotion ? 0 : 1} 
-              rotationIntensity={reduceMotion ? 0 : 1} 
+            <Float
+              key={i}
+              speed={reduceMotion ? 0 : 1}
+              rotationIntensity={reduceMotion ? 0 : 1}
               floatIntensity={reduceMotion ? 0 : 1}
             >
               <GeometricShape {...shape} reduceMotion={reduceMotion} />

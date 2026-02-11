@@ -10,9 +10,9 @@ interface AboutCardProps {
   style?: React.CSSProperties;
 }
 
-export const AboutCard: React.FC<AboutCardProps> = ({ 
-  children, 
-  className = "", 
+export const AboutCard: React.FC<AboutCardProps> = ({
+  children,
+  className = "",
   delay = 0,
   title,
   icon,
@@ -61,16 +61,16 @@ export const AboutCard: React.FC<AboutCardProps> = ({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, ...style }}
-        className="h-full relative overflow-hidden rounded-2xl bg-[var(--black-800)] border border-[var(--black-600)] backdrop-blur-md transition-shadow duration-300 hover:shadow-2xl hover:shadow-[var(--blue-glow)] hover:border-[var(--black-600)] group"
+        className="h-full relative overflow-hidden rounded-2xl bg-[var(--black-800)] border border-[var(--black-600)] backdrop-blur-md transition-shadow duration-300 hover:shadow-2xl hover:shadow-[var(--silver-glow)] hover:border-[var(--black-600)] group"
       >
         {/* Glow Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--white-30)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        
+
         <div className="relative z-10 p-6 h-full flex flex-col">
           {title && (
             <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[var(--black-600)]">
-              {icon && <span className="text-[var(--pink)]">{icon}</span>}
-              <h3 className="text-xl font-display font-bold text-[var(--white)] group-hover:text-[var(--blue)] transition-colors">
+              {icon && <span className="text-[var(--platinum)]">{icon}</span>}
+              <h3 className="text-xl font-display font-bold text-[var(--white)] group-hover:text-[var(--silver)] transition-colors">
                 {title}
               </h3>
             </div>
