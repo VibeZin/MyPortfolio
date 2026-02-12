@@ -3,8 +3,10 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'next-themes';
 import { Navigation } from './components/Navigation';
-import { Background3D } from './components/Background3D';
+import { CelestialBackground } from './components/CelestialBackground';
+import { ParticleField } from './components/ParticleField';
 import { CustomCursor } from './components/CustomCursor';
+import { ThemeToggle } from './components/ThemeToggle';
 import { Footer } from './components/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
 import { NoiseOverlay } from './components/NoiseOverlay';
@@ -65,8 +67,10 @@ export default function App() {
         </a>
 
         <div className="min-h-screen transition-colors duration-300 bg-[var(--black-900)] text-[var(--white-90)] selection:bg-[var(--platinum)] selection:text-white overflow-x-hidden relative flex flex-col">
+          <CelestialBackground />
+          <ParticleField />
           <CustomCursor />
-          <Background3D />
+          <ThemeToggle />
           <Navigation />
           <main
             id="main-content"

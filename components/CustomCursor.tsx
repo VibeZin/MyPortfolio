@@ -29,15 +29,15 @@ export const CustomCursor: React.FC = () => {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isInteractable = 
-        target.tagName === 'A' || 
-        target.tagName === 'BUTTON' || 
-        target.closest('a') || 
+      const isInteractable =
+        target.tagName === 'A' ||
+        target.tagName === 'BUTTON' ||
+        target.closest('a') ||
         target.closest('button') ||
         target.tagName === 'INPUT' ||
         target.tagName === 'TEXTAREA' ||
         window.getComputedStyle(target).cursor === 'pointer';
-      
+
       setIsHovering(!!isInteractable);
     };
 
@@ -66,10 +66,10 @@ export const CustomCursor: React.FC = () => {
       {/* Main Cursor (Dot) - Direct mouseX/mouseY for instant tracking */}
       <motion.div
         className="fixed top-0 left-0 w-3 h-3 rounded-full pointer-events-none z-[9999] mix-blend-difference"
-        style={{ 
-          x: mouseX, 
-          y: mouseY, 
-          translateX: '-50%', 
+        style={{
+          x: mouseX,
+          y: mouseY,
+          translateX: '-50%',
           translateY: '-50%',
           background: 'var(--silver)',
           boxShadow: '0 0 6px var(--silver)'
@@ -84,11 +84,11 @@ export const CustomCursor: React.FC = () => {
       {/* Trail Cursor (Ring) - Spring physics */}
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 border rounded-full pointer-events-none z-[9998] mix-blend-difference"
-        style={{ 
-          x: trailX, 
-          y: trailY, 
-          translateX: '-50%', 
-          translateY: '-50%' 
+        style={{
+          x: trailX,
+          y: trailY,
+          translateX: '-50%',
+          translateY: '-50%'
         }}
         animate={{
           scale: isClicking ? 1.5 : isHovering ? 2 : 1,
@@ -97,22 +97,23 @@ export const CustomCursor: React.FC = () => {
         }}
         transition={{ duration: 0.15 }}
       />
-      
+
       {/* Glow Effect - Follows trail */}
       <motion.div
-        className="fixed top-0 left-0 w-32 h-32 rounded-full blur-2xl pointer-events-none z-[9997]"
-        style={{ 
-          x: trailX, 
-          y: trailY, 
-          translateX: '-50%', 
+        className="fixed top-0 left-0 w-40 h-40 rounded-full pointer-events-none z-[9997]"
+        style={{
+          x: trailX,
+          y: trailY,
+          translateX: '-50%',
           translateY: '-50%',
-          background: 'var(--silver-glow)'
+          background: 'radial-gradient(circle, var(--silver-glow) 0%, transparent 70%)',
+          filter: 'blur(20px)'
         }}
         animate={{
-          opacity: isVisible ? (isHovering ? 0.4 : 0.15) : 0,
-          scale: isHovering ? 1.2 : 1
+          opacity: isVisible ? (isHovering ? 0.5 : 0.2) : 0,
+          scale: isHovering ? 1.3 : 1
         }}
-        transition={{ duration: 0.15 }}
+        transition={{ duration: 0.3 }}
       />
     </>
   );
