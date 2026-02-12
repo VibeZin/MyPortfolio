@@ -5,47 +5,64 @@ export const CelestialBackground: React.FC = () => {
     const canvasRef = useRef<HTMLDivElement>(null);
     const { theme } = useTheme();
 
-    // Configuration for celestial orbs
+    // HIGH-QUALITY orb configuration with VISIBLE light mode colors
     const orbs = [
         {
             id: 1,
-            size: 800,
-            x: 20,
-            y: 30,
-            duration: 25,
-            gradientDark: 'radial-gradient(circle, rgba(192,192,192,0.15) 0%, rgba(192,192,192,0) 70%)',
-            gradientLight: 'radial-gradient(circle, rgba(100,100,250,0.08) 0%, rgba(100,100,250,0) 70%)',
-            blur: 80
+            size: 1000,
+            x: 15,
+            y: 20,
+            duration: 30,
+            // DARK MODE: Silver glow
+            // LIGHT MODE: Blue/purple glow (VISIBLE!)
+            gradient: theme === 'dark'
+                ? 'radial-gradient(circle at center, rgba(192,192,192,0.25) 0%, rgba(192,192,192,0.15) 30%, rgba(192,192,192,0.05) 60%, transparent 100%)'
+                : 'radial-gradient(circle at center, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.12) 30%, rgba(236,72,153,0.08) 60%, transparent 100%)',
+            blur: 60
         },
         {
             id: 2,
-            size: 600,
-            x: 70,
-            y: 20,
-            duration: 35,
-            gradientDark: 'radial-gradient(circle, rgba(229,229,229,0.12) 0%, rgba(229,229,229,0) 70%)',
-            gradientLight: 'radial-gradient(circle, rgba(200,100,250,0.06) 0%, rgba(200,100,250,0) 70%)',
-            blur: 100
+            size: 800,
+            x: 75,
+            y: 25,
+            duration: 40,
+            gradient: theme === 'dark'
+                ? 'radial-gradient(circle at center, rgba(229,229,229,0.20) 0%, rgba(229,229,229,0.12) 35%, rgba(229,229,229,0.04) 65%, transparent 100%)'
+                : 'radial-gradient(circle at center, rgba(167,139,250,0.18) 0%, rgba(167,139,250,0.10) 35%, rgba(99,102,241,0.05) 65%, transparent 100%)',
+            blur: 70
         },
         {
             id: 3,
-            size: 500,
-            x: 50,
-            y: 60,
-            duration: 30,
-            gradientDark: 'radial-gradient(circle, rgba(192,192,192,0.10) 0%, rgba(192,192,192,0) 70%)',
-            gradientLight: 'radial-gradient(circle, rgba(150,150,250,0.07) 0%, rgba(150,150,250,0) 70%)',
-            blur: 90
+            size: 900,
+            x: 45,
+            y: 65,
+            duration: 35,
+            gradient: theme === 'dark'
+                ? 'radial-gradient(circle at center, rgba(192,192,192,0.18) 0%, rgba(192,192,192,0.10) 40%, rgba(192,192,192,0.03) 70%, transparent 100%)'
+                : 'radial-gradient(circle at center, rgba(236,72,153,0.12) 0%, rgba(236,72,153,0.08) 40%, rgba(167,139,250,0.04) 70%, transparent 100%)',
+            blur: 80
         },
         {
             id: 4,
             size: 700,
-            x: 10,
+            x: 80,
             y: 70,
-            duration: 40,
-            gradientDark: 'radial-gradient(circle, rgba(128,128,128,0.08) 0%, rgba(128,128,128,0) 70%)',
-            gradientLight: 'radial-gradient(circle, rgba(250,150,200,0.05) 0%, rgba(250,150,200,0) 70%)',
-            blur: 110
+            duration: 45,
+            gradient: theme === 'dark'
+                ? 'radial-gradient(circle at center, rgba(128,128,128,0.15) 0%, rgba(128,128,128,0.08) 45%, transparent 100%)'
+                : 'radial-gradient(circle at center, rgba(59,130,246,0.14) 0%, rgba(59,130,246,0.09) 45%, transparent 100%)',
+            blur: 75
+        },
+        {
+            id: 5,
+            size: 600,
+            x: 30,
+            y: 40,
+            duration: 38,
+            gradient: theme === 'dark'
+                ? 'radial-gradient(circle at center, rgba(192,192,192,0.12) 0%, rgba(192,192,192,0.06) 50%, transparent 100%)'
+                : 'radial-gradient(circle at center, rgba(139,92,246,0.16) 0%, rgba(139,92,246,0.10) 50%, transparent 100%)',
+            blur: 65
         }
     ];
 
@@ -59,7 +76,7 @@ export const CelestialBackground: React.FC = () => {
             document.querySelectorAll('.celestial-orb').forEach((orb, i) => {
                 const speed = (i + 1) * 0.5;
                 (orb as HTMLElement).style.transform =
-                    `translate(${x * speed * 20}px, ${y * speed * 20}px)`;
+                    `translate3d(${x * speed * 20}px, ${y * speed * 20}px, 0)`;
             });
         };
 
@@ -82,23 +99,24 @@ export const CelestialBackground: React.FC = () => {
                 zIndex: 0,
                 pointerEvents: 'none',
                 overflow: 'hidden',
+                // HIGH CONTRAST BACKGROUNDS
                 background: isDark ? '#000000' : '#ffffff',
-                transition: 'background 0.3s ease'
+                transition: 'background 0.4s ease'
             }}
         >
-            {/* Gradient Mesh Base Layer */}
+            {/* Base Gradient Layer (subtle depth) */}
             <div
                 style={{
                     position: 'absolute',
                     inset: 0,
                     background: isDark
-                        ? 'radial-gradient(ellipse at 50% 50%, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%)'
-                        : 'radial-gradient(ellipse at 50% 50%, rgba(250,250,255,1) 0%, rgba(255,255,255,1) 100%)',
+                        ? 'radial-gradient(ellipse at 50% 30%, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%)'
+                        : 'radial-gradient(ellipse at 50% 30%, rgba(248,250,252,1) 0%, rgba(255,255,255,1) 100%)',
                     opacity: 1
                 }}
             />
 
-            {/* Floating Celestial Orbs */}
+            {/* HIGH-QUALITY Celestial Orbs (no pixelation) */}
             {orbs.map((orb) => (
                 <div
                     key={orb.id}
@@ -109,37 +127,53 @@ export const CelestialBackground: React.FC = () => {
                         height: `${orb.size}px`,
                         left: `${orb.x}%`,
                         top: `${orb.y}%`,
-                        background: isDark ? orb.gradientDark : orb.gradientLight,
+                        background: orb.gradient,
                         filter: `blur(${orb.blur}px)`,
                         borderRadius: '50%',
-                        animation: `float-${orb.id} ${orb.duration}s ease-in-out infinite`,
+                        animation: `float-celestial-${orb.id} ${orb.duration}s ease-in-out infinite`,
                         willChange: 'transform',
-                        transition: 'background 0.3s ease, filter 0.3s ease'
+                        transition: 'background 0.4s ease, filter 0.4s ease',
+                        // CRITICAL: Prevent pixelation
+                        transform: 'translateZ(0)',
+                        backfaceVisibility: 'hidden' as const,
+                        imageRendering: 'auto' as const
                     }}
                 />
             ))}
 
-            {/* Animated Gradient Overlay */}
+            {/* Atmospheric Glow Overlay */}
             <div
                 style={{
                     position: 'absolute',
                     inset: 0,
                     background: isDark
-                        ? 'linear-gradient(135deg, rgba(192,192,192,0.03) 0%, transparent 50%, rgba(229,229,229,0.02) 100%)'
-                        : 'linear-gradient(135deg, rgba(100,150,250,0.02) 0%, transparent 50%, rgba(200,100,250,0.03) 100%)',
-                    animation: 'gradient-shift 20s ease infinite',
+                        ? 'linear-gradient(135deg, rgba(192,192,192,0.02) 0%, transparent 40%, rgba(229,229,229,0.015) 100%)'
+                        : 'linear-gradient(135deg, rgba(99,102,241,0.03) 0%, transparent 40%, rgba(236,72,153,0.025) 100%)',
+                    animation: 'atmospheric-shift 25s ease-in-out infinite',
                     backgroundSize: '200% 200%'
                 }}
             />
 
-            {/* Grain Texture for Elegance */}
+            {/* ULTRA-FINE Grain (prevents banding) */}
+            <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+                <filter id="ultra-grain">
+                    <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="1.2"
+                        numOctaves={5}
+                        stitchTiles="stitch"
+                    />
+                    <feColorMatrix type="saturate" values="0" />
+                </filter>
+            </svg>
             <div
                 style={{
                     position: 'absolute',
                     inset: 0,
-                    backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-                    opacity: isDark ? 0.015 : 0.008,
-                    mixBlendMode: 'overlay'
+                    filter: 'url(#ultra-grain)',
+                    opacity: isDark ? 0.012 : 0.008,
+                    mixBlendMode: 'overlay',
+                    pointerEvents: 'none'
                 }}
             />
         </div>

@@ -3,48 +3,61 @@
 @tailwind utilities;
 
 :root {
-  /* LIGHT MODE (Default) */
+  /* ============================================
+     LIGHT MODE - MAXIMUM CONTRAST & READABILITY
+     ============================================ */
 
-  /* Backgrounds */
+  /* Backgrounds - Pure white */
   --black-900: #ffffff;
   /* Main Background */
-  --black-800: #f1f5f9;
-  /* Cards / Surfaces - Slightly darker than bg for contrast */
-  --black-700: #cbd5e1;
-  /* Borders / Separators - Visible grey */
-  --black-600: #94a3b8;
-  /* Interactive States */
+  --black-800: #fafafa;
+  /* Secondary Background */
+  --black-700: #f5f5f5;
+  /* Card Background */
+  --black-600: #e5e5e5;
+  /* Borders */
 
-  /* Text Colors */
-  --white: #0f172a;
-  /* Primary Headings (Dark in light mode) */
-  --white-90: #334155;
-  /* Body Text (Dark Grey) */
-  --white-60: #64748b;
-  /* Muted Text (Medium Grey) */
-  --white-30: #94a3b8;
-  /* Very Muted */
+  /* Text Colors - PURE BLACK for maximum readability */
+  --white: #000000;
+  /* Primary Headings - PURE BLACK */
+  --white-90: #0a0a0a;
+  /* Body Text - Near black */
+  --white-60: #404040;
+  /* Muted Text - Dark gray */
+  --white-30: #808080;
+  /* Very Muted - Medium gray */
 
-  /* Silver Accents (Primary Interactive) */
-  --silver: #c0c0c0;
-  --silver-light: #e8e8e8;
-  --silver-dark: #808080;
-  --silver-glow: rgba(192, 192, 192, 0.25);
+  /* Vibrant Accents for Light Mode */
+  --silver: #3b82f6;
+  /* Bright Blue (primary accent) */
+  --silver-light: #60a5fa;
+  /* Lighter Blue */
+  --silver-dark: #2563eb;
+  /* Darker Blue */
+  --silver-glow: rgba(59, 130, 246, 0.4);
 
-  /* Platinum (Secondary) */
-  --platinum: #e5e5e5;
-  --platinum-glow: rgba(229, 229, 229, 0.20);
+  --platinum: #8b5cf6;
+  /* Purple (secondary accent) */
+  --platinum-glow: rgba(139, 92, 246, 0.3);
 
-  --charcoal: #334155;
-  --obsidian: #1e293b;
+  --charcoal: #0a0a0a;
+  --obsidian: #000000;
 
-  /* Glass Effect */
+  /* Glass Effect with strong borders */
   --glass: rgba(255, 255, 255, 0.85);
-  --glass-light: rgba(0, 0, 0, 0.1);
+  --glass-light: rgba(0, 0, 0, 0.08);
+
+  /* Shadows for depth */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-glow: 0 0 24px rgba(59, 130, 246, 0.3);
 }
 
 .dark {
-  /* DARK MODE (Overrides) */
+  /* ============================================
+     DARK MODE - Keep existing elegant silver theme
+     ============================================ */
 
   /* Backgrounds */
   --black-900: #080810;
@@ -74,6 +87,12 @@
   /* Glass Effect */
   --glass: rgba(14, 14, 23, 0.65);
   --glass-light: rgba(255, 255, 255, 0.08);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 24px rgba(192, 192, 192, 0.25);
 }
 
 @layer base {
@@ -130,90 +149,108 @@ html {
 }
 
 /* ========================================
-   CELESTIAL ANIMATIONS
+   CELESTIAL ANIMATIONS (HIGH-QUALITY)
    ======================================== */
 
-@keyframes float-1 {
+@keyframes float-celestial-1 {
 
   0%,
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
 
   25% {
-    transform: translate(30px, -40px) rotate(3deg);
+    transform: translate3d(40px, -50px, 0) rotate(5deg) scale(1.05);
   }
 
   50% {
-    transform: translate(-20px, 20px) rotate(-2deg);
+    transform: translate3d(-30px, 30px, 0) rotate(-3deg) scale(0.98);
   }
 
   75% {
-    transform: translate(40px, 30px) rotate(4deg);
+    transform: translate3d(50px, 40px, 0) rotate(7deg) scale(1.03);
   }
 }
 
-@keyframes float-2 {
+@keyframes float-celestial-2 {
 
   0%,
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
 
   33% {
-    transform: translate(-40px, 30px) rotate(-3deg);
+    transform: translate3d(-50px, 40px, 0) rotate(-4deg) scale(1.04);
   }
 
   66% {
-    transform: translate(25px, -25px) rotate(2deg);
+    transform: translate3d(35px, -35px, 0) rotate(4deg) scale(0.97);
   }
 }
 
-@keyframes float-3 {
+@keyframes float-celestial-3 {
 
   0%,
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
 
   20% {
-    transform: translate(35px, 20px) rotate(5deg);
+    transform: translate3d(45px, 30px, 0) rotate(8deg) scale(1.06);
   }
 
   40% {
-    transform: translate(-30px, -30px) rotate(-4deg);
+    transform: translate3d(-40px, -40px, 0) rotate(-6deg) scale(0.96);
   }
 
   60% {
-    transform: translate(20px, 35px) rotate(3deg);
+    transform: translate3d(30px, 50px, 0) rotate(5deg) scale(1.02);
   }
 
   80% {
-    transform: translate(-25px, 15px) rotate(-2deg);
+    transform: translate3d(-35px, 20px, 0) rotate(-4deg) scale(0.99);
   }
 }
 
-@keyframes float-4 {
+@keyframes float-celestial-4 {
 
   0%,
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
 
   50% {
-    transform: translate(-35px, 40px) rotate(-5deg);
+    transform: translate3d(-45px, 55px, 0) rotate(-7deg) scale(1.05);
   }
 }
 
-@keyframes gradient-shift {
+@keyframes float-celestial-5 {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+
+  40% {
+    transform: translate3d(38px, -45px, 0) rotate(6deg) scale(1.04);
+  }
+
+  80% {
+    transform: translate3d(-42px, 35px, 0) rotate(-5deg) scale(0.98);
+  }
+}
+
+@keyframes atmospheric-shift {
 
   0%,
   100% {
     background-position: 0% 50%;
+    opacity: 1;
   }
 
   50% {
     background-position: 100% 50%;
+    opacity: 0.8;
   }
 }
 
