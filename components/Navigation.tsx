@@ -66,8 +66,8 @@ export const Navigation: React.FC = () => {
                   key={link.name}
                   to={link.path}
                   className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isActive
-                      ? 'text-black font-bold'
-                      : 'text-[var(--white-60)] hover:text-[var(--white)] hover:font-semibold'
+                    ? 'text-black font-bold'
+                    : 'text-[var(--white-60)] hover:text-[var(--white)] hover:font-semibold'
                     }`}
                 >
                   {isActive && (
@@ -146,14 +146,43 @@ export const Navigation: React.FC = () => {
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={`text-4xl font-display font-bold ${location.pathname === link.path
-                        ? 'text-[var(--silver)]'
-                        : 'text-[var(--white)] hover:text-[var(--white-60)]'
+                      ? 'text-[var(--silver)]'
+                      : 'text-[var(--white)] hover:text-[var(--white-60)]'
                       } transition-colors`}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Theme Toggle in Mobile Menu */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: NAV_LINKS.length * 0.1 }}
+                className="pt-4 border-t border-[var(--black-600)] w-full flex justify-center"
+              >
+                <button
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className="p-3 rounded-full bg-[var(--black-800)] text-[var(--silver)] hover:scale-110 hover:shadow-md transition-all duration-300 border border-[var(--black-700)] flex items-center gap-2"
+                  aria-label="Toggle Dark Mode"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={theme}
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {theme === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
+                    </motion.div>
+                  </AnimatePresence>
+                  <span className="text-[var(--white-60)] text-sm font-medium">
+                    {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                  </span>
+                </button>
+              </motion.div>
             </div>
           </motion.div>
         )}

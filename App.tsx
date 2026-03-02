@@ -6,7 +6,7 @@ import { Navigation } from './components/Navigation';
 import { CelestialBackground } from './components/CelestialBackground';
 import { ParticleField } from './components/ParticleField';
 import { CustomCursor } from './components/CustomCursor';
-import { ThemeToggle } from './components/ThemeToggle';
+
 import { Footer } from './components/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
 import { NoiseOverlay } from './components/NoiseOverlay';
@@ -70,7 +70,7 @@ export default function App() {
           <CelestialBackground />
           <ParticleField />
           <CustomCursor />
-          <ThemeToggle />
+
           <Navigation />
           <main
             id="main-content"
